@@ -1,0 +1,13 @@
+C:\Users\Ольга\Desktop\3 КУРС\Криптография\Labs\basics-of-cryptography\Lab_1\Cryptography_1\Cryptography_1\bin\Debug\netcoreapp3.1\Cryptography_1.exe
+C:\Users\Ольга\Desktop\3 КУРС\Криптография\Labs\basics-of-cryptography\Lab_1\Cryptography_1\Cryptography_1\bin\Debug\netcoreapp3.1\Cryptography_1.deps.json
+C:\Users\Ольга\Desktop\3 КУРС\Криптография\Labs\basics-of-cryptography\Lab_1\Cryptography_1\Cryptography_1\bin\Debug\netcoreapp3.1\Cryptography_1.runtimeconfig.json
+C:\Users\Ольга\Desktop\3 КУРС\Криптография\Labs\basics-of-cryptography\Lab_1\Cryptography_1\Cryptography_1\bin\Debug\netcoreapp3.1\Cryptography_1.runtimeconfig.dev.json
+C:\Users\Ольга\Desktop\3 КУРС\Криптография\Labs\basics-of-cryptography\Lab_1\Cryptography_1\Cryptography_1\bin\Debug\netcoreapp3.1\Cryptography_1.dll
+C:\Users\Ольга\Desktop\3 КУРС\Криптография\Labs\basics-of-cryptography\Lab_1\Cryptography_1\Cryptography_1\bin\Debug\netcoreapp3.1\Cryptography_1.pdb
+C:\Users\Ольга\Desktop\3 КУРС\Криптография\Labs\basics-of-cryptography\Lab_1\Cryptography_1\Cryptography_1\obj\Debug\netcoreapp3.1\Cryptography_1.csprojAssemblyReference.cache
+C:\Users\Ольга\Desktop\3 КУРС\Криптография\Labs\basics-of-cryptography\Lab_1\Cryptography_1\Cryptography_1\obj\Debug\netcoreapp3.1\Cryptography_1.AssemblyInfoInputs.cache
+C:\Users\Ольга\Desktop\3 КУРС\Криптография\Labs\basics-of-cryptography\Lab_1\Cryptography_1\Cryptography_1\obj\Debug\netcoreapp3.1\Cryptography_1.AssemblyInfo.cs
+C:\Users\Ольга\Desktop\3 КУРС\Криптография\Labs\basics-of-cryptography\Lab_1\Cryptography_1\Cryptography_1\obj\Debug\netcoreapp3.1\Cryptography_1.csproj.CoreCompileInputs.cache
+C:\Users\Ольга\Desktop\3 КУРС\Криптография\Labs\basics-of-cryptography\Lab_1\Cryptography_1\Cryptography_1\obj\Debug\netcoreapp3.1\Cryptography_1.dll
+C:\Users\Ольга\Desktop\3 КУРС\Криптография\Labs\basics-of-cryptography\Lab_1\Cryptography_1\Cryptography_1\obj\Debug\netcoreapp3.1\Cryptography_1.pdb
+C:\Users\Ольга\Desktop\3 КУРС\Криптография\Labs\basics-of-cryptography\Lab_1\Cryptography_1\Cryptography_1\obj\Debug\netcoreapp3.1\Cryptography_1.genruntimeconfig.cache
