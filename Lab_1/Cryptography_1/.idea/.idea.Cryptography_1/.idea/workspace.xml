@@ -16,6 +16,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c14b811128284fc898127606108dea4891df90/D3/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="25nEwi2eXOJQFTtUZEvXDmUCksx" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -23,6 +26,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34991708" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -62,7 +67,9 @@
       <option name="presentableId" value="Default" />
       <updated>1646154690901</updated>
       <workItem from="1646154714550" duration="1305000" />
-      <workItem from="1652429471280" duration="22216000" />
+      <workItem from="1652429471280" duration="47042000" />
+      <workItem from="1652816819714" duration="345000" />
+      <workItem from="1652817197978" duration="12649000" />
     </task>
     <servers />
   </component>

@@ -1,50 +1,70 @@
 ﻿using System;
+using System.Numerics;
+using System.Xml;
 
 namespace Cryptography_1
 {
     class Program
     {
-        /* P-block */
-        private static int[] P_block = new int[] {7, 1, 4, 8, 3, 6, 5, 2};
-
-        public static byte[] BitSwapping(byte[] value, int[] rule)
+        public static byte[] BitSwapping(byte[] byteArrray, int[] rule)
         {
-            int i = 0;
-            ulong value_num = BitConverter.ToUInt64(value, 0);
+            var value = BitConverter.ToUInt32(byteArrray, 0);
             ulong res = 0;
-            
-            if (value.Length != rule.Length)
-                throw new ArgumentException("Incorrect value argument");
-            
-            Console.WriteLine("value_num = " + value_num);
+            int i = 0;
+
+            if ((uint)Math.Log2(value) + 1 != rule.Length)
+                throw new ArgumentException("Incorrect value argument! =)");
             
             while (i < rule.Length)
             {
-                var k = 1 << rule[i] - 1;
-                Console.WriteLine("{0} - {1}", k, value_num);
-                res |= (ulong)k & value_num;
+                res |= (((value >> (rule[i] - 1)) & 1) << i);
+                i++;
+            }
+            Console.WriteLine("{0} - {1}", res, (ulong)res);
+            return BitConverter.GetBytes((ulong)res);
+        }
+
+        public static byte[] BitReplacement(byte[] byteArrray, byte[] rule, int k)
+        {
+            var value = BitConverter.ToUInt32(byteArrray, 0);
+            ulong res = 0;
+            int i = 0;
+            
+            if (Math.Log2(rule.Length) % k != 0)
+                throw new ArgumentException("Incorrect value argument! =(");
+            
+            // value = 11000111 -> ?
+            // rule[0] = 1; | 00 -> 01
+            // rule[1] = 2; | 01 -> 10
+            // rule[2] = 0; | 10 -> 00
+            // rule[3] = 3; | 11 -> 11
+            
+            while (i < (int)((Math.Log2(value) + 1) / k))
+            {
+                var oldSection = ((value >> i * k) & (ulong)((1 << k) - 1));
+                var newSection = rule[oldSection];
+                res |=  (ulong)newSection << (i * k);
                 i++;
             }
             return (BitConverter.GetBytes(res));
         }
-        
+
         static void Main(string[] args)
         {
-            byte[] mass = new byte[8] {2, 1, 1, 0, 0, 0, 0, 0};
-            for (int i = 0 ; i < mass.Length; i++)
-                Console.Write(mass[i] + " "); 
-            Console.WriteLine();
-            byte[] mass1 = BitSwapping(mass, P_block);
-            for (int i = 0 ; i < mass1.Length; i++)
-                Console.Write(mass1[i] + " ");   
+            int[] P_block = new int[] {4, 1, 2, 3};
+            byte[] byteArray_p = {3, 0, 0, 0};
+            
+            byte[] newByteArray_p = BitSwapping(byteArray_p, P_block);
+            //Console.WriteLine(Convert.ToString(BitConverter.ToInt32(newByteArray_p), 2).PadLeft(64, '0'));
+
+            byte[] S_block = {1, 2, 0, 3};
+            uint value = 199;
+            
+            //Console.WriteLine(Convert.ToString(value, 2).PadLeft(32, '0'));
+            var res = BitReplacement(BitConverter.GetBytes(value), S_block, 2);
+            //Console.WriteLine(Convert.ToString(BitConverter.ToUInt32(res), 2).PadLeft(32, '0'));
+
         }
-        
-        // public static byte[] BitReplacement(byte[] mass, int[] S_block, byte k)
-        // {
-        //     
-        //     
-        //     return ();
-        // }
-        
     }
 }
+
