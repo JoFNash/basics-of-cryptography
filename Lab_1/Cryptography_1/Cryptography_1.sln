@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cryptography_1", "Cryptography_1\Cryptography_1.csproj", "{2211A2E4-7348-4D6A-AEC4-10B877390C74}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DES", "DES\DES.csproj", "{ABB39F2D-EEFA-4542-9F2E-3B585C82A77D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSA", "RSA\RSA.csproj", "{8A4C2CAE-031C-46CD-A54F-3D14098E9083}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{2211A2E4-7348-4D6A-AEC4-10B877390C74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2211A2E4-7348-4D6A-AEC4-10B877390C74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2211A2E4-7348-4D6A-AEC4-10B877390C74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABB39F2D-EEFA-4542-9F2E-3B585C82A77D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABB39F2D-EEFA-4542-9F2E-3B585C82A77D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABB39F2D-EEFA-4542-9F2E-3B585C82A77D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABB39F2D-EEFA-4542-9F2E-3B585C82A77D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A4C2CAE-031C-46CD-A54F-3D14098E9083}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A4C2CAE-031C-46CD-A54F-3D14098E9083}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A4C2CAE-031C-46CD-A54F-3D14098E9083}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A4C2CAE-031C-46CD-A54F-3D14098E9083}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
