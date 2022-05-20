@@ -6,7 +6,7 @@ namespace DES.classes
     {
         public byte[] getEncryptionTransform(byte[] block, byte[] roundKey)
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }

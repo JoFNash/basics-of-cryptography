@@ -10,7 +10,7 @@
             14, 6, 61, 53, 45, 37, 29, 21, 13, 5, 28, 20, 12, 4
         };
 
-        public static int[] CyclicShifts = {1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1};
+        public static int[] CyclicShear = {1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1};
 
         public static int[] FinalPermutation =
         {
