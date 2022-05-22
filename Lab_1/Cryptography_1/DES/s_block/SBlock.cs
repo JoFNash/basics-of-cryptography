@@ -24,9 +24,9 @@ namespace DES.s_block
             
             while (i < (int)((Math.Log2(value) + 1) / k))
             {
-                var oldSection = ((value >> i * k) & (ulong)((1 << k) - 1));
-                var newSection = rule[oldSection];
-                res |=  (ulong)newSection << (i * k);
+                var OldSection = ((value >> i * k) & (ulong)((1 << k) - 1));
+                var NewSection = rule[OldSection];
+                res |=  (ulong)NewSection << (i * k);
                 i++;
             }
             return (BitConverter.GetBytes(res));
