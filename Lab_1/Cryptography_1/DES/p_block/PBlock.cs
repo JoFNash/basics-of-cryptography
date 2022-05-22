@@ -10,17 +10,15 @@ namespace DES.p_block
             ulong res = 0;
             int i = 0;
 
-            if ((uint)Math.Log2(value) + 1 != rule.Length)
-                throw new ArgumentException("Incorrect value argument! =)");
+            // if ((uint)Math.Log2(value) + 1 != rule.Length)
+            //     throw new ArgumentException("Incorrect value argument! =)");
             
             while (i < rule.Length)
             {
                 res |= (((value >> (rule[i] - 1)) & 1) << i);
                 i++;
             }
-            Console.WriteLine("{0} - {1}", res, (ulong)res);
             return BitConverter.GetBytes((ulong)res);
         }
-        
     }
 }

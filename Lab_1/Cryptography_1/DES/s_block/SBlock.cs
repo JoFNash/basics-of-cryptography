@@ -10,7 +10,7 @@ namespace DES.s_block
             ulong res = 0;
             int i = 0;
             
-            if (Math.Log2(rule.Length) % k != 0 || byteArrray.Length / k != rule.Length)
+            if (byteArrray.Length * 8 % k != 0)
                 throw new ArgumentException("Incorrect value argument! =(");
             
             // value = 11000111 -> ?
@@ -18,6 +18,9 @@ namespace DES.s_block
             // rule[1] = 2; | 01 -> 10
             // rule[2] = 0; | 10 -> 00
             // rule[3] = 3; | 11 -> 11
+            
+            // 10110011/0101
+            // k = 2
             
             while (i < (int)((Math.Log2(value) + 1) / k))
             {

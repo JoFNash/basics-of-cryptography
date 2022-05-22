@@ -14,7 +14,7 @@ namespace DES
             
             byte[] newByteArray_p = DES.p_block.PBlock.BitSwapping(byteArray_p, P_block);
             Console.WriteLine(Convert.ToString(BitConverter.ToInt32(newByteArray_p), 2).PadLeft(64, '0'));
-
+            
             
             /* s_block */
             byte[] S_block = {1, 2, 0, 3};
@@ -23,6 +23,10 @@ namespace DES
             Console.WriteLine(Convert.ToString(value, 2).PadLeft(32, '0'));
             var res = DES.s_block.SBlock.BitReplacement(BitConverter.GetBytes(value), S_block, 2);
             Console.WriteLine(Convert.ToString(BitConverter.ToUInt32(res), 2).PadLeft(32, '0'));
+
+            byte[] key = new byte[8];
+            new Random(12345).NextBytes(key);
+            byte[][] mass = new DES.classes.KeyExtension().getRoundKeys(key);
 
         }
     }

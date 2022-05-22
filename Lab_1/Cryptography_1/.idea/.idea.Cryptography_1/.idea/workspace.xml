@@ -54,7 +54,7 @@
     <property name="settings.editor.selected.configurable" value="SolutionBuilderGeneralOptionsPageId" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.Cryptography_1">
+  <component name="RunManager" selected=".NET Project.DES">
     <configuration name="Cryptography_1" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -123,7 +123,7 @@
       <workItem from="1652816819714" duration="345000" />
       <workItem from="1652817197978" duration="13147000" />
       <workItem from="1653030162330" duration="3404000" />
-      <workItem from="1653038338928" duration="21430000" />
+      <workItem from="1653038338928" duration="35812000" />
     </task>
     <servers />
   </component>
@@ -135,5 +135,24 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/DES/Program.cs</url>
+          <line>28</line>
+          <properties documentPath="C:\Users\Ольга\Desktop\3 КУРС\Криптография\Labs\basics-of-cryptography\Lab_1\Cryptography_1\DES\Program.cs" initialLine="28" containingFunctionPresentation="method 'Main'">
+            <startOffsets>
+              <option value="985" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1050" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
