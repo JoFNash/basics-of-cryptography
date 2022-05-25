@@ -9,18 +9,20 @@ namespace DES.classes
         public byte[][] getRoundKeys(byte[] key)
         {
             var RoundKeys = new byte[16][];
-            byte[] NewKey = BitSwapping(key, Constants.FirstKeyPermutation);
+            var NewKey = BitSwapping(key, Constants.FirstKeyPermutation);
             var value = BitConverter.ToUInt64(NewKey, 0);
 
             var BlockC = value >> 28;
             var BlockD = value & ((1 << 28) -1);
 
-            for (int i = 0; i < 16; i++)
+            for (var i = 0; i < 16; i++)
             {
                 var shear = Constants.CyclicShear[i]; /* сдвиг 1 или 2 */
-                BlockC = ((BlockC << shear) | (BlockC >> (28 - shear))) | ((1 << 28) - 1);
-                BlockD = ((BlockD << shear) | (BlockD >> (28 - shear))) | ((1 << 28) - 1);
-                byte[] CommonBlock = BitConverter.GetBytes((BlockC << 28) | BlockD); /* 28 + 28 битов */
+                
+                BlockC = ((BlockC << shear) | (BlockC >> (28 - shear))) & ((1 << 28) - 1); 
+                BlockD = ((BlockD << shear) | (BlockD >> (28 - shear))) & ((1 << 28) - 1);
+                
+                var CommonBlock = BitConverter.GetBytes((BlockC << 28) | BlockD); /* 28 + 28 битов */
                 RoundKeys[i] = DES.p_block.PBlock.BitSwapping(CommonBlock, Constants.SecondKeyPermutation);
             }
             return (RoundKeys);

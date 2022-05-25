@@ -25,11 +25,25 @@ namespace DES
             // Console.WriteLine(Convert.ToString(BitConverter.ToUInt32(res), 2).PadLeft(32, '0'));
 
             byte[] key = new byte[8];
-            new Random().NextBytes(key);
+            new Random(5).NextBytes(key);
             for (int i = 0; i < key.Length; i++)
                 Console.WriteLine(key[i]);
             byte[][] mass = new DES.classes.KeyExtension().getRoundKeys(key);
+            // foreach (byte[] i in mass)
+            // {
+            //     foreach (byte j in i)
+            //     {
+            //         Console.Write($"{j} \t");
+            //     }
+            //     Console.WriteLine();
+            // }
 
+            byte[] roundKeyRandom = new byte[6];
+            new Random().NextBytes(roundKeyRandom);
+            byte[] block = new byte[4];
+            new Random().NextBytes(block);
+            byte[] arrayBytes = new classes.EncryptedTransformation().getEncryptionTransform(block, roundKeyRandom);
+            
         }
     }
 }

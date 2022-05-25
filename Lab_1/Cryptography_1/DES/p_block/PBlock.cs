@@ -6,7 +6,7 @@ namespace DES.p_block
     {
         public static byte[] BitSwapping(byte[] byteArrray, int[] rule)
         {
-            var value = BitConverter.ToUInt32(byteArrray, 0);
+            var value = BitConverter.ToUInt64(byteArrray, 0);
             ulong res = 0;
             int i = 0;
 
