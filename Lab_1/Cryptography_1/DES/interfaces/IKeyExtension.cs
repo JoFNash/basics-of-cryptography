@@ -4,6 +4,6 @@
     {
         /* (входной ключ - массив байтов,
             результат - массив раундовых ключей (каждый раундовый ключ - массив байтов)) */
-        public byte[][] getRoundKeys(byte[] key);
+        public byte[][] GetRoundKeys(byte[] key);
     }
 }

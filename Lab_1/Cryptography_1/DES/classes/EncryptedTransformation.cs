@@ -6,22 +6,23 @@ namespace DES.classes
     public class EncryptedTransformation: IEncryptionTransformation
     {
         /* шифрующее преобразование */
-        public byte[] getEncryptionTransform(byte[] block, byte[] roundKey) /* 32-bit, 48-bit*/
+        public byte[] getEncryptionTransform(byte[] block, byte[] roundKey) 
         {
             /* функция расширения Е */
-            byte[] NewBlock = DES.p_block.PBlock.BitSwapping(block, constants.Constants.extensionFunctionE);
-            var value = BitConverter.ToUInt64(NewBlock) ^ BitConverter.ToUInt64(roundKey);
-            int i = 0;
+            var newBlock = DES.p_block.PBlock.BitSwapping(block, constants.Constants.extensionFunctionE);
+            byte[] arrayBytes = new byte[8];
+            for (int j = 0; j < newBlock.Length; j++)
+                arrayBytes[j] |= (byte)(newBlock[j] ^ roundKey[j]);
+            var value = BitConverter.ToUInt64(arrayBytes);
             ulong res = 0;
             
-            // 1.0010.0 = 10 + 0010
-            while (i < 8)
+            for (var i = 0; i < 8; ++i)
             {
-                ulong BlockB = (value >> (i * 6)) & ((uint)1 << 6) - 1; 
-                ulong Border = ((BlockB >> 5) << 1) | (BlockB & 1);
-                ulong bits = (BlockB >> 1) & 0b1111;
-                BlockB = constants.Constants.conversionS[i, Border, bits];
-                res = res | (BlockB << 4 * i);
+                ulong blockB = (value >> (i * 6)) & ((uint)1 << 6) - 1; 
+                ulong border = ((blockB >> 5) << 1) | (blockB & 1);
+                ulong bits = (blockB >> 1) & 0b1111;
+                blockB = constants.Constants.conversionS[i, border, bits];
+                res = res | (blockB << 4 * i);
             }
             return (p_block.PBlock.BitSwapping(BitConverter.GetBytes(res), constants.Constants.permutationP));
         }

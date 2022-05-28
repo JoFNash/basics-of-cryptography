@@ -6,26 +6,26 @@ namespace DES.classes
 {
     public class KeyExtension : IKeyExtension
     {
-        public byte[][] getRoundKeys(byte[] key)
+        public byte[][] GetRoundKeys(byte[] key)
         {
-            var RoundKeys = new byte[16][];
-            var NewKey = BitSwapping(key, Constants.FirstKeyPermutation);
-            var value = BitConverter.ToUInt64(NewKey, 0);
+            var roundKeys = new byte[16][];
+            var newKey = BitSwapping(key, Constants.FirstKeyPermutation);
+            var value = BitConverter.ToUInt64(newKey, 0);
 
-            var BlockC = value >> 28;
-            var BlockD = value & ((1 << 28) -1);
+            var blockC = value >> 28;
+            var blockD = value & ((1 << 28) -1);
 
             for (var i = 0; i < 16; i++)
             {
                 var shear = Constants.CyclicShear[i]; /* сдвиг 1 или 2 */
                 
-                BlockC = ((BlockC << shear) | (BlockC >> (28 - shear))) & ((1 << 28) - 1); 
-                BlockD = ((BlockD << shear) | (BlockD >> (28 - shear))) & ((1 << 28) - 1);
+                blockC = ((blockC << shear) | (blockC >> (28 - shear))) & ((1 << 28) - 1); 
+                blockD = ((blockD << shear) | (blockD >> (28 - shear))) & ((1 << 28) - 1);
                 
-                var CommonBlock = BitConverter.GetBytes((BlockC << 28) | BlockD); /* 28 + 28 битов */
-                RoundKeys[i] = DES.p_block.PBlock.BitSwapping(CommonBlock, Constants.SecondKeyPermutation);
+                var commonBlock = BitConverter.GetBytes((blockC << 28) | blockD); /* 28 + 28 битов */
+                roundKeys[i] = DES.p_block.PBlock.BitSwapping(commonBlock, Constants.SecondKeyPermutation);
             }
-            return (RoundKeys);
+            return (roundKeys);
         }
         
         public static byte[] BitSwapping(byte[] byteArrray, int[] rule)

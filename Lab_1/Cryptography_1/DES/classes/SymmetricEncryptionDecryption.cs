@@ -14,7 +14,7 @@ namespace DES.classes
             throw new System.NotImplementedException();
         }
 
-        public byte[] getRoundKeys(byte[] dKey)
+        public void getRoundKeys(byte[] dKey)
         {
             throw new System.NotImplementedException();
         }

@@ -6,19 +6,19 @@ namespace DES.p_block
     {
         public static byte[] BitSwapping(byte[] byteArrray, int[] rule)
         {
-            var value = BitConverter.ToUInt64(byteArrray, 0);
-            ulong res = 0;
-            int i = 0;
-
-            // if ((uint)Math.Log2(value) + 1 != rule.Length)
-            //     throw new ArgumentException("Incorrect value argument! =)");
+            uint res = 0;
             
-            while (i < rule.Length)
+            // if (byteArrray.Length * 8 % rule.Length != 0)
+            //     throw new ArgumentException("Incorrect value argument! =(");
+            
+            for (int i = 0; i < rule.Length; i++)
             {
-                res |= (((value >> (rule[i] - 1)) & 1) << i);
-                i++;
+                var block = byteArrray[(rule[i] - 1) / 8];
+                var offset = (rule[i] - 1) % 8;
+                var bit = (byte)((block >> (8 - offset - 1)) & 1);
+                res = (res << 1) | bit;
             }
-            return BitConverter.GetBytes((ulong)res);
+            return (BitConverter.GetBytes(res));
         }
     }
 }

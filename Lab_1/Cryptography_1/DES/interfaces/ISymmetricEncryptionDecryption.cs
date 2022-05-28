@@ -8,6 +8,6 @@ namespace DES.interfaces
 
         public byte[] Decryption(byte[] bytesArray);
 
-        public byte[] getRoundKeys(byte[] dKey);
+        public void getRoundKeys(byte[] dKey);
     }
 }
