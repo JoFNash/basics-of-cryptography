@@ -1,4 +1,5 @@
 ﻿using System;
+using DES.classes;
 using DES.p_block;
 using DES.s_block;
 
@@ -38,14 +39,14 @@ namespace DES
             //     Console.WriteLine();
             // }
 
-            byte[] roundKeyRandom = new byte[6] {12, 1, 7, 0, 0, 1};
-            // new Random().NextBytes(roundKeyRandom);
-            byte[] block = new byte[6] {1, 2, 3, 5, 1, 1};
-            //new Random().NextBytes(block);
-            //byte[] tmpBlock1 = (1 << roundKeyRandom.Length) | block;
-            Array.Resize(ref roundKeyRandom, 8); 
-            byte[] arrayBytes = new classes.EncryptedTransformation().getEncryptionTransform(block, roundKeyRandom);
-            Console.WriteLine(Convert.ToString(BitConverter.ToInt32(arrayBytes), 2).PadLeft(64, '0'));
+            // byte[] roundKeyRandom = new byte[6] {12, 1, 7, 0, 0, 1};
+            // // new Random().NextBytes(roundKeyRandom);
+            // byte[] block = new byte[6] {1, 2, 3, 5, 1, 1};
+            // //new Random().NextBytes(block);
+            // //byte[] tmpBlock1 = (1 << roundKeyRandom.Length) | block;
+            // Array.Resize(ref roundKeyRandom, 8); 
+            // byte[] arrayBytes = new classes.EncryptedTransformation().getEncryptionTransform(block, roundKeyRandom);
+            // Console.WriteLine(Convert.ToString(BitConverter.ToInt32(arrayBytes), 2).PadLeft(64, '0'));
             
             /* p_block */
             // int[] P_block = new int[] {1, 2, 3, 4, 5, 6, 7, 8};
@@ -53,7 +54,13 @@ namespace DES
             //
             // byte[] newByteArray_p = DES.p_block.PBlock.BitSwapping(byteArray_p, P_block);
             // Console.WriteLine(Convert.ToString(BitConverter.ToInt32(newByteArray_p), 2).PadLeft(64, '0'));
+
+            byte[] block = new byte[8] {1, 2, 0, 0, 3, 7, 6, 5};
+            //new Random().NextBytes(block);
+            //var array = classes.FeistelNetwork.Encryption(block);
             
+            FeistelNetwork feistNet = new FeistelNetwork(new KeyExtension(), new EncryptedTransformation());
+            feistNet.Encryption(block);
         }
     }
 }

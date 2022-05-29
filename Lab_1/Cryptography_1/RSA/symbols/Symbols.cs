@@ -47,9 +47,14 @@ namespace RSA.symbols
             return (r);
         }
 
-        // public BigInteger GetLegendra(BigInteger a, BigInteger p)
-        // {
-        //     
-        // }
+        public BigInteger GetLegendra(BigInteger a, BigInteger p)
+        {
+            /* проверка на простоту (?) */
+            /* */
+            
+            BigInteger bigInt = GetJacobi(a, p);
+            
+            return (bigInt);
+        }
     }
 }

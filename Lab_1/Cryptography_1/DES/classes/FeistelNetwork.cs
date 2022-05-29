@@ -14,7 +14,6 @@ namespace DES.classes
             _encryptionTransformation = encryptTransform;
         }
 
-
         public byte[] Encryption(byte[] bytesArray)
         {
             ulong number = BitConverter.ToUInt64(bytesArray);
@@ -38,19 +37,19 @@ namespace DES.classes
         {
             ulong number = BitConverter.ToUInt64(bytesArray);
             uint left = (uint)(number >> 32);
-            uint right = (uint)(number & (((ulong)1 << 32) - 1));
+            uint right = (uint)(number & ((ulong) 1 << 32) - 1);
             int rounds = 16;
             uint newLeft = 0;
             uint newRight = 0;
 
-            for (int i = rounds - 1; i >= 0; i--)
+            for (int i = 0; i < rounds; i++)
             {
                 newRight = left;
                 newLeft = right ^ BitConverter.ToUInt32(_encryptionTransformation.getEncryptionTransform(BitConverter.GetBytes(left), _roundKeys[i]));
                 right = newRight;
-                left = newLeft;
+                left = newRight;
             }
-            return (BitConverter.GetBytes((ulong)newLeft << 32 | newRight)); /* 32 + 32 */
+            return (BitConverter.GetBytes((ulong)newLeft << 32 | newRight));
         }
 
         public void getRoundKeys(byte[] dKey)

@@ -13,7 +13,7 @@ namespace DES.classes
             var value = BitConverter.ToUInt64(newKey, 0);
 
             var blockC = value >> 28;
-            var blockD = value & ((1 << 28) -1);
+            var blockD = value & ((1 << 28) - 1);
 
             for (var i = 0; i < 16; i++)
             {
@@ -29,17 +29,17 @@ namespace DES.classes
         }
         
         public static byte[] BitSwapping(byte[] byteArrray, int[] rule)
-                {
-                    var value = BitConverter.ToUInt64(byteArrray, 0);
-                    ulong res = 0;
-                    int i = 0;
-                    
-                    while (i < rule.Length)
-                    {
-                        res |= (((value >> (rule[i] - 1)) & 1) << i);
-                        i++;
-                    }
-                    return BitConverter.GetBytes((ulong)res);
-                }
+        {
+            var value = BitConverter.ToUInt64(byteArrray, 0);
+            ulong res = 0;
+            int i = 0;
+            
+            while (i < rule.Length)
+            {
+                res |= (((value >> (rule[i] - 1)) & 1) << i);
+                i++;
+            }
+            return BitConverter.GetBytes((ulong)res);
+        }
     }
 }
